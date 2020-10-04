@@ -13,7 +13,7 @@ class Category_model extends Model
         if ($id === false) {
             return $this->findAll();
         } else {
-            return $this->getWhere(['category_id' => $id]);
+            return $this->getWhere(['category_id' => $id])->getRowArray();
         }
     }
 
