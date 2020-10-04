@@ -94,12 +94,7 @@ class Categories extends ResourceController
     public function update($id = null)
     {
         $validation = \Config\Services::validation();
-        // $name = $this->request->getRawInput('category_name');
-        // $status = $this->request->getRawInput('category_status');
-        // $data = [
-        //     'category_name'     => $name,
-        //     'category_status'   => $status
-        // ];
+
         $data = $this->request->getRawInput();
 
         if ($validation->run($data, 'category') == false) {
@@ -145,4 +140,5 @@ class Categories extends ResourceController
         }
         return $this->respond($response, $code);
     }
+    
 }
